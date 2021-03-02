@@ -10,5 +10,9 @@
     <bean id="musicBean"
           class="org.solovova.std_spring_firstapp.player.ClassicMusic">
     </bean>
+    <bean id="musicPlayer"
+          class="org.solovova.std_spring_firstapp.player.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
 
 </beans>
