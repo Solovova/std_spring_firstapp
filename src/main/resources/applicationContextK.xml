@@ -8,8 +8,8 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="testBean"
-          class="org.solovova.std_spring_firstapp.TestBean">
-        <constructor-arg value="SolovJava"/>
+          class="org.solovova.std_spring_firstapp.TestBeanK">
+        <constructor-arg value="SolovKotlin"/>
     </bean>
 
 </beans>
