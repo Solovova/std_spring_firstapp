@@ -10,10 +10,13 @@ object TestSpring {
             "applicationContext.xml"
         )
 
-        val musicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
+        val firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
+        firstMusicPlayer.nameFromFile= "First in program"
+        val secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
 
+        println( firstMusicPlayer == secondMusicPlayer)
 
-        musicPlayer.play()
+        secondMusicPlayer.play()
 
         context.close()
     }

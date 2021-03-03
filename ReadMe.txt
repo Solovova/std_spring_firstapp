@@ -1,21 +1,14 @@
-https://www.youtube.com/watch?v=MjnVZgMnTT0&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgSXrZ&index=5&ab_channel=alishev
-
-private String name;
-public void setName(String name)
- {
-  this.name = name
- }
-
- <property name="name" value="Some name"/>
-
-
-
- <context:property-placeholder location="classpath:musicPlayer.properties"/>
- <property name="name" value="S{musicPlayer.volume}"/>
-
-
-
-
+6. Inject
 https://www.youtube.com/watch?v=dBxRmUH3Af8&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgSXrZ&index=6&ab_channel=alishev
+
+7. Scope    singleton - default
+            prototype - getBean() при вызове каждый раз новый объект
+
+                        MVC
+            request -
+            session
+            qlobal-session
+
+https://www.youtube.com/watch?v=IcwWPjeBpFU&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgSXrZ&index=7&ab_channel=alishev
 
 IoC - єто подход когда в конструктор передается объект от которого зависит
