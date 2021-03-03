@@ -3,12 +3,11 @@ package org.solovova.std_spring_firstapp.player
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
 import javax.annotation.PreDestroy
 
-@Component("musicPlayer")
+@Component
 class MusicPlayer {
     @Autowired
     @Qualifier("classicMusic")
