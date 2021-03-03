@@ -4,13 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component("musicPlayer")
-class MusicPlayer  {
-    private val music: Music
-
-    @Autowired
-    constructor(music: Music) {
-        this.music = music
-    }
+class MusicPlayer @Autowired constructor(private val music: Music) {
 
     private var nameFromSetter: String? = null
 
