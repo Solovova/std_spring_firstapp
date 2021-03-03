@@ -1,23 +1,28 @@
 package org.solovova.std_spring_firstapp
 
+import org.solovova.std_spring_firstapp.player.ClassicMusic
 import org.solovova.std_spring_firstapp.player.MusicPlayer
 import org.springframework.context.support.ClassPathXmlApplicationContext
 
 object TestSpring {
     @JvmStatic
-    fun main(args: Array<String>) {
-        val context = ClassPathXmlApplicationContext(
-            "applicationContext.xml"
-        )
+    fun classicMethod() {
+        val mp = MusicPlayer.createInstance(ClassicMusic())
+        mp.play()
+    }
 
-        val firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
-        firstMusicPlayer.nameFromFile= "First in program"
-        val secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer::class.java)
+    @JvmStatic
+    fun springMethod() {
+        val context = ClassPathXmlApplicationContext("applicationContext.xml")
 
-        println( firstMusicPlayer == secondMusicPlayer)
-
-        secondMusicPlayer.play()
+        val mp = context.getBean("musicPlayer", MusicPlayer::class.java)
+        mp.play()
 
         context.close()
+    }
+
+    @JvmStatic
+    fun main(args: Array<String>) {
+        springMethod()
     }
 }

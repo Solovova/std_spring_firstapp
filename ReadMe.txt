@@ -12,6 +12,8 @@ https://www.youtube.com/watch?v=dBxRmUH3Af8&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgS
 https://www.youtube.com/watch?v=IcwWPjeBpFU&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgSXrZ&index=7&ab_channel=alishev
 
 8. Been lifecycle    prototype спринг не вызывает destroy
+
+
 https://www.youtube.com/watch?v=MVbBLoZrT2A&list=PLAma_mKffTOR5o0WNHnY0mTjKxnCgSXrZ&index=8&ab_channel=alishev
 
 IoC - єто подход когда в конструктор передается объект от которого зависит

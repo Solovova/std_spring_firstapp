@@ -1,6 +1,7 @@
 package org.solovova.std_spring_firstapp.player
 
-class MusicPlayer(private val music: Music) {
+class MusicPlayer private constructor(private val music: Music) {
+
     private var nameFromSetter: String? = null
 
     var nameFromFile: String? = null
@@ -21,4 +22,14 @@ class MusicPlayer(private val music: Music) {
         println("nameFromSetter ${this.nameFromSetter}")
         println("nameFromFile ${this.nameFromFile}")
     }
+
+    companion object {
+        @JvmStatic
+        fun createInstance(music: Music): MusicPlayer {
+            return MusicPlayer(music)
+        }
+    }
+
+
+
 }
