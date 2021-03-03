@@ -2,20 +2,22 @@ package org.solovova.std_spring_firstapp.player
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 
 @Component("musicPlayer")
-
-class MusicPlayer @Autowired constructor(
+class MusicPlayer {
+    @Autowired
     @Qualifier("classicMusic")
-    music: Music
-) {
+    private lateinit var music: Music
 
-    private val music: Music = music
 
-    private var nameFromSetter: String? = null
+    @Value("Set from nameFromSetter")
+    private lateinit var nameFromSetter: String
 
-    var nameFromFile: String? = null
+    @Value("\${mp.nameFromFile}")
+    private lateinit var nameFromFile: String
+
     fun doInit() {
         println("Init method")
     }
@@ -24,9 +26,7 @@ class MusicPlayer @Autowired constructor(
         println("Destroy method")
     }
 
-    fun setNameFromSetter(nameFromSetter: String) {
-        this.nameFromSetter = nameFromSetter
-    }
+
 
     fun play() {
         music.play()
