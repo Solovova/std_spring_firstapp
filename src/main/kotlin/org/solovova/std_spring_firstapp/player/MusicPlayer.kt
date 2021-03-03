@@ -4,6 +4,13 @@ class MusicPlayer(private val music: Music) {
     private var nameFromSetter: String? = null
 
     var nameFromFile: String? = null
+    fun doInit() {
+        println("Init method")
+    }
+
+    fun doDestroy() {
+        println("Destroy method")
+    }
 
     fun setNameFromSetter(nameFromSetter: String) {
         this.nameFromSetter = nameFromSetter

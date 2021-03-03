@@ -15,10 +15,13 @@
     </bean>
     <bean id="musicPlayer"
           class="org.solovova.std_spring_firstapp.player.MusicPlayer"
-          scope="prototype">
+          scope="prototype"
+          init-method="doInit"
+          destroy-method="doDestroy">
         <constructor-arg ref="musicBean"/>
         <property name="nameFromSetter" value="nameFromSetter Set in xml"/>
         <property name="nameFromFile" value="${musicPlayer.nameFromFile}"/>
     </bean>
+
 
 </beans>
