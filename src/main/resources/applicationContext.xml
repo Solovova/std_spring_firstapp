@@ -7,22 +7,6 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
-    <context:property-placeholder location="musicPlayer.properties"/>
-
-    <bean id="musicBean"
-          class="org.solovova.std_spring_firstapp.player.ClassicMusic"
-    >
-    </bean>
-
-
-    <bean id="musicPlayer"
-          class="org.solovova.std_spring_firstapp.player.MusicPlayer"
-          factory-method="createInstance">
-        <constructor-arg ref="musicBean"/>
-        <property name="nameFromSetter" value="nameFromSetter Set in xml"/>
-        <property name="nameFromFile" value="${musicPlayer.nameFromFile}"/>
-    </bean>
-
+    <context:component-scan base-package="org.solovova.std_spring_firstapp" />
 
 </beans>

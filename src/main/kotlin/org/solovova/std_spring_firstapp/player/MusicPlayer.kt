@@ -1,6 +1,16 @@
 package org.solovova.std_spring_firstapp.player
 
-class MusicPlayer private constructor(private val music: Music) {
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
+
+@Component("musicPlayer")
+class MusicPlayer  {
+    private val music: Music
+
+    @Autowired
+    constructor(music: Music) {
+        this.music = music
+    }
 
     private var nameFromSetter: String? = null
 
@@ -23,12 +33,7 @@ class MusicPlayer private constructor(private val music: Music) {
         println("nameFromFile ${this.nameFromFile}")
     }
 
-    companion object {
-        @JvmStatic
-        fun createInstance(music: Music): MusicPlayer {
-            return MusicPlayer(music)
-        }
-    }
+
 
 
 
